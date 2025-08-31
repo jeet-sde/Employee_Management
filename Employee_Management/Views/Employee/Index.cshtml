@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Employee_Management.Models.Employee>
+
+<h2> Employee List</h2>
+
+<div class="d-flex justify-content-end mb-3">
+	<a asp-action="Create" class="btn btn-primary">
+		Add New Employee
+	</a>
+</div>
+<table class=" table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Department</th>
+			<th>Salary</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@{
+			int count = 1;
+		}
+		@foreach(var emp in Model)
+		{
+			<tr>
+				<td>@count</td>
+				<td>@emp.name</td>
+				<td>@emp.Department</td>
+				<td>@emp.salary</td>
+				
+				<td>
+					<a asp-action="Details" asp-route-id="@emp.id" class="btn btn-sm btn-info">View</a>
+					<a asp-action="Edit" asp-route-id="@emp.id" class="btn btn-sm btn-warning">Edit</a>
+					<a asp-action="Delete" asp-route-id="@emp.id" class="btn btn-sm btn-danger">Delete</a>
+				</td>
+			</tr>
+			count++;
+		}
+		</tbody>
+
+	</table>

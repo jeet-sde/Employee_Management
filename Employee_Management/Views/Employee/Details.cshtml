@@ -1,0 +1,16 @@
+﻿@model Employee_Management.Models.Employee
+
+<h2>Employee Details</h2>
+
+<div class="card p-3">
+    <p><strong>Name:</strong> @Model.name</p>
+    <p><strong>Age:</strong> @Model.age</p>
+    <p><strong>Department:</strong> @Model.Department</p>
+    <p><strong>Salary:</strong> @Model.salary</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Phone:</strong> @Model.Phone</p>
+    <p><strong>Address:</strong> @Model.Address</p>
+    <p><strong>Education:</strong> @Model.Education</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary mt-3">Back to List</a>
