@@ -1,6 +1,7 @@
 ﻿using Employee_Management.Data;
 using Employee_Management.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Employee_Management.Controllers
 {
@@ -26,21 +27,24 @@ namespace Employee_Management.Controllers
         //Create: get
         public IActionResult Create()
         {
+         
+            
             return View();
+            
         }
 
         //Create: Post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Employee employee)
+        public IActionResult Create(Employee emp)
         {
             if (ModelState.IsValid)
             {
-                _db.Employees.Add(employee);
+                _db.Employees.Add(emp);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(employee);
+         return View(emp);
         }
 
         //Upadate: Get

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Employee_Management.Models
 {
@@ -16,10 +17,14 @@ namespace Employee_Management.Models
         [Required(ErrorMessage = "Age is required")]
         public int age { get; set; }
 
-        [Required(ErrorMessage = "Department is required")]
-        public string Department { get; set; }
 
-       
+       [Required(ErrorMessage = "Department is required")]
+        public String Department { get; set; }
+
+
+   
+
+
         [Range(0 ,double.MaxValue, ErrorMessage = "Salary must be a positive number")]
         public decimal salary { get; set; }
 
@@ -34,6 +39,9 @@ namespace Employee_Management.Models
         public string Address { get; set; }
 
         public string Education { get; set; }
+
+
+       
 
     }
 }
